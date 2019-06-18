@@ -1,0 +1,157 @@
+@mixin tablet {
+    @media ( max-width: 768px ) { @content; }
+}
+
+$pink: #ff80c0;
+// $green: #068922;
+$green: #05b521;
+
+$margin: 20px;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid $green;
+    
+    &:hover {
+        color: white;
+        border-bottom: 0px solid $green;
+    }
+}
+
+
+html {
+    font-size: 36px;
+    
+    @include tablet {
+        font-size: 17px;
+    }
+}
+
+body {
+    padding: 0 $margin $margin $margin;
+    font-family: 'Spectral', Times, serif;
+    color: $green;
+    line-height: 1;
+}
+
+i {
+    font-style: normal;
+    font-family: sans-serif;    
+    text-transform: uppercase;
+}
+
+section {
+    background: $pink;
+    padding: 15px $margin;
+    text-align: center;
+    
+    &.half {
+        width: calc(50% - 10px);
+        display: inline-block;
+        vertical-align: top;
+        
+        @include tablet {
+            width: 100%;
+            height: auto !important;
+        }
+        
+        &--first {
+            margin-right: 20px;
+        }
+        
+        .line {
+            margin-bottom: 0.5em;
+            margin-top: 2rem;
+            
+            &--first {
+                margin-top:0;
+                padding-top: 5px;
+            }
+        }
+    }
+}
+
+
+.line {
+    text-align: justify;
+    height: 1.1em;
+    overflow: hidden; 
+
+    &:after {
+        content: "";
+        display: inline-block;
+        width: 100%;
+    }
+    
+    &--link {
+        height: 1.5em;
+    }
+    
+    &--margin {
+        margin-top: 2em;
+    }
+    
+    &--small {
+        font-size: 18px;
+    }
+}
+
+
+
+
+.word {
+    margin-bottom: 0.25em;
+    
+    span {
+        font-size: 18px;
+    }
+}
+
+
+.ticketbox {
+    position: relative;
+    overflow: auto;
+    width: 100%;
+    margin: $margin 0;
+
+    img {
+        width: 100%;
+        max-width: 100%;
+        display: block;
+    }
+    
+
+    // div {
+    //     float: left;
+
+    // }
+    
+    // &--buy {
+    //     width: 15vw;
+      
+        
+    // }
+    
+    // &--space {
+    //     width: 46.5vw;       
+    //     border: 1px solid $green;  
+    //     height: 100%;
+    //     left: 15vw;
+    //     position: absolute;
+    //     top: 0;
+    //     margin: 0 20px;
+    // }
+    
+    // &--tickets {
+    //     width: 32vw;
+    //     position: absolute;
+    //     right: 0;
+    // }
+}

@@ -1,0 +1,326 @@
+/* line 8, ../scss/main.scss */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 15, ../scss/main.scss */
+body {
+  font-family: 'Spectral', serif;
+  background: #f1818a;
+}
+
+/* line 20, ../scss/main.scss */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* line 25, ../scss/main.scss */
+canvas {
+  position: fixed;
+}
+
+/* line 29, ../scss/main.scss */
+.circle {
+  width: 300px;
+  height: 300px;
+  border-radius: 350px;
+  border: 15px solid #283885;
+  position: fixed;
+  top: calc(50% - 150px);
+  left: calc(53% - 150px);
+  z-index: 1;
+  transform: scale(0.7);
+}
+@media (max-width: 600px) {
+  /* line 29, ../scss/main.scss */
+  .circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    border: 8px solid #283885;
+    top: calc(50% - 50px);
+    left: calc(56% - 50px);
+  }
+}
+
+/* line 52, ../scss/main.scss */
+.circle_inner {
+  width: 450px;
+  height: 450px;
+  border-radius: 350px;
+  border: 10px solid white;
+  position: fixed;
+  top: calc(50% - 225px);
+  left: calc(53% - 225px);
+  z-index: 1;
+  transform: scale(0);
+}
+@media (max-width: 600px) {
+  /* line 52, ../scss/main.scss */
+  .circle_inner {
+    left: calc(56% - 225px);
+  }
+}
+
+/* line 68, ../scss/main.scss */
+.circle_outer {
+  width: 450px;
+  height: 450px;
+  border-radius: 350px;
+  border: 10px solid #f9ca23;
+  position: fixed;
+  top: calc(50% - 225px);
+  left: calc(53% - 225px);
+  z-index: 1;
+  transform: scale(0);
+}
+@media (max-width: 600px) {
+  /* line 68, ../scss/main.scss */
+  .circle_outer {
+    left: calc(56% - 225px);
+  }
+}
+
+/* line 84, ../scss/main.scss */
+.ears, .pen {
+  position: fixed;
+  font-size: 150px;
+  top: calc(50% - 115px);
+  color: #283885;
+  font-family: 'Space Mono', monospace;
+  z-index: 10;
+  letter-spacing: -5px;
+}
+@media (max-width: 600px) {
+  /* line 84, ../scss/main.scss */
+  .ears, .pen {
+    top: calc(50% - 40px);
+    font-size: 50px;
+  }
+}
+
+/* line 99, ../scss/main.scss */
+.ears {
+  left: calc(37% - 300px);
+  letter-spacing: -1px;
+}
+@media (max-width: 600px) {
+  /* line 99, ../scss/main.scss */
+  .ears {
+    font-size: 50px;
+    left: 5%;
+  }
+}
+
+/* line 109, ../scss/main.scss */
+.pen {
+  right: calc(43% - 300px);
+  letter-spacing: -10px;
+}
+@media (max-width: 600px) {
+  /* line 109, ../scss/main.scss */
+  .pen {
+    right: 5%;
+    letter-spacing: -1px;
+  }
+}
+
+/*CONTENT*/
+/* line 125, ../scss/main.scss */
+.mono {
+  font-family: 'Space Mono', monospace;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  font-size: 20px;
+  color: #283885;
+}
+@media (max-width: 600px) {
+  /* line 125, ../scss/main.scss */
+  .mono {
+    font-size: 16px;
+  }
+}
+
+/* line 136, ../scss/main.scss */
+.mono.break {
+  padding-bottom: 0.5em;
+}
+
+/* line 140, ../scss/main.scss */
+.seri {
+  color: #f1818a;
+  font-size: 40px;
+  line-height: 1.2;
+  width: 75%;
+  margin-left: 12.5%;
+  text-transform: uppercase;
+}
+@media (max-width: 600px) {
+  /* line 140, ../scss/main.scss */
+  .seri {
+    width: 90%;
+    margin-left: 5%;
+    font-size: 20px;
+  }
+}
+
+/* line 155, ../scss/main.scss */
+.seri.large {
+  font-size: 80px;
+  line-height: 1;
+}
+@media (max-width: 600px) {
+  /* line 155, ../scss/main.scss */
+  .seri.large {
+    font-size: 20px;
+  }
+}
+
+/* line 164, ../scss/main.scss */
+.seri span {
+  font-family: 'Space Mono', monospace;
+  font-size: 20px;
+}
+@media (max-width: 600px) {
+  /* line 164, ../scss/main.scss */
+  .seri span {
+    font-size: 8px;
+  }
+}
+
+/* line 172, ../scss/main.scss */
+.content {
+  position: absolute;
+  top: 90vh;
+  width: 90%;
+  margin-left: 5%;
+  z-index: 100;
+  text-align: center;
+}
+@media (max-width: 600px) {
+  /* line 172, ../scss/main.scss */
+  .content {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+/* line 186, ../scss/main.scss */
+.content .block {
+  background: #ebebeb;
+  padding-bottom: 4rem;
+  margin-bottom: 40vh;
+}
+/* line 191, ../scss/main.scss */
+.content .block-last {
+  margin-bottom: 90vh;
+}
+
+/* line 199, ../scss/main.scss */
+.button {
+  margin-top: 2em;
+  background: #283885;
+  border: 1px solid #283885;
+  color: #ebebeb;
+  text-decoration: none;
+  font-family: 'Spectral', serif;
+  font-size: 40px;
+  display: block;
+  width: 50%;
+  margin-left: 25%;
+  padding: 20px 0;
+}
+@media (max-width: 600px) {
+  /* line 199, ../scss/main.scss */
+  .button {
+    font-size: 20px;
+    width: 80%;
+    margin-left: 10%;
+  }
+}
+
+/* line 219, ../scss/main.scss */
+.button:hover {
+  color: #283885;
+  background: #ebebeb;
+}
+
+/* line 226, ../scss/main.scss */
+.artists {
+  padding: 30px;
+  overflow: auto;
+}
+@media (max-width: 600px) {
+  /* line 226, ../scss/main.scss */
+  .artists {
+    padding: 15px;
+  }
+}
+
+/* line 235, ../scss/main.scss */
+.entry {
+  width: calc(33.336% - 21px);
+  float: left;
+  margin-right: 30px;
+  margin-bottom: 50px;
+}
+@media (max-width: 600px) {
+  /* line 235, ../scss/main.scss */
+  .entry {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+/* line 246, ../scss/main.scss */
+.entry:nth-of-type(3n) {
+  margin-right: 0;
+}
+/* line 250, ../scss/main.scss */
+.entry__title, .entry__copy {
+  color: #f1818a;
+  font-size: 16px;
+}
+/* line 255, ../scss/main.scss */
+.entry__title {
+  font-size: 25px;
+  text-transform: uppercase;
+  margin-bottom: 0.5em;
+  line-height: 1.1;
+}
+/* line 262, ../scss/main.scss */
+.entry__copy {
+  margin-top: 0.5em;
+  text-align: left;
+}
+/* line 266, ../scss/main.scss */
+.entry__copy p {
+  margin-bottom: 1em;
+}
+/* line 270, ../scss/main.scss */
+.entry__copy a {
+  border-bottom: 1px solid #283885;
+}
+/* line 273, ../scss/main.scss */
+.entry__copy a:hover {
+  border-bottom: 0px;
+}
+/* line 279, ../scss/main.scss */
+.entry__wrap {
+  background-color: #f1818a;
+}
+/* line 283, ../scss/main.scss */
+.entry__image {
+  height: 20vw;
+  background-position: center;
+  background-size: cover;
+  mix-blend-mode: screen;
+  background-repeat: no-repeat;
+}
+@media (max-width: 600px) {
+  /* line 283, ../scss/main.scss */
+  .entry__image {
+    height: 50vw;
+  }
+}

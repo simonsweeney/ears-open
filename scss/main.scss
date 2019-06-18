@@ -1,0 +1,294 @@
+@mixin phone {
+  @media (max-width: 600px) { @content; }
+}
+
+
+
+
+* {
+	box-sizing:  border-box;
+	margin: 0;
+	padding: 0;
+}
+
+
+body {
+	font-family: 'Spectral', serif;
+	background: #f1818a;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+canvas {
+	position: fixed;
+}
+
+.circle {
+	width: 300px;
+	height: 300px;
+	border-radius: 350px;
+	border: 15px solid #283885;
+	position: fixed;
+	top: calc(50% - 150px);
+	left: calc(53% - 150px);
+	z-index: 1;
+	transform: scale(0.7);
+	
+	@include phone {
+		width: 100px;
+		height: 100px;
+		border-radius: 100px;
+		border: 8px solid #283885;
+		top: calc(50% - 50px);
+		left: calc(56% - 50px);
+
+	}
+
+}
+
+.circle_inner {
+	width: 450px;
+	height: 450px;
+	border-radius: 350px;
+	border: 10px solid white;
+	position: fixed;
+	top: calc(50% - 225px);
+	left: calc(53% - 225px);
+	z-index: 1;
+	transform: scale(0);
+	
+	@include phone {
+		left: calc(56% - 225px);
+	}
+}
+
+.circle_outer {
+	width: 450px;
+	height: 450px;
+	border-radius: 350px;
+	border: 10px solid #f9ca23;
+	position: fixed;
+	top: calc(50% - 225px);
+	left: calc(53% - 225px);
+	z-index: 1;
+	transform: scale(0);
+	
+	@include phone {
+		left: calc(56% - 225px);
+	}
+}
+
+.ears, .pen {
+	position: fixed;
+	font-size: 150px;
+	top: calc(50% - 115px);
+	color: #283885;
+	font-family: 'Space Mono', monospace;
+	z-index: 10;
+	letter-spacing: -5px;
+	
+	@include phone {
+		top: calc(50% - 40px);
+		font-size: 50px;
+	}
+}
+
+.ears {
+	left: calc(37% - 300px);
+	letter-spacing: -1px;
+	
+	@include phone {
+		font-size: 50px;
+		left: 5%;
+	}
+}
+
+.pen {
+	right: calc(43% - 300px);
+	letter-spacing: -10px;
+	
+	@include phone {
+		right: 5%;
+		letter-spacing: -1px;
+	}
+}
+
+
+
+
+
+/*CONTENT*/
+
+.mono {
+	font-family: 'Space Mono', monospace;
+	padding-top: 3em;
+	padding-bottom: 3em;
+	font-size: 20px;
+	color: #283885;
+	@include phone {
+		font-size: 16px;
+	}
+}
+
+.mono.break {
+	padding-bottom: 0.5em;
+}
+
+.seri {
+	color: rgb(241, 129, 138);
+	font-size: 40px;
+	line-height: 1.2;
+	width: 75%;
+	margin-left: 12.5%;
+	text-transform: uppercase;
+	
+	@include phone {
+		width: 90%;
+		margin-left: 5%;
+		font-size: 20px;
+	}
+}
+
+.seri.large {
+	font-size: 80px;
+	line-height: 1;
+	
+	@include phone {
+		font-size: 20px;
+	}
+}
+
+.seri span {
+	font-family: 'Space Mono', monospace;
+	font-size: 20px;
+	@include phone {
+		font-size: 8px;
+	}
+}
+
+.content {
+	position: absolute;
+	top: 90vh;
+	width: 90%;
+	margin-left: 5%;
+	z-index: 100;
+	text-align: center;
+	
+	@include phone {
+		width: 100%;
+		margin-left: 0;
+	}
+
+	
+	.block {
+		background: rgb(235,235,235);
+		padding-bottom: 4rem;
+		margin-bottom: 40vh;
+		
+		&-last {
+			margin-bottom: 90vh;
+		}
+	}
+}
+
+
+
+.button {
+	margin-top: 2em;
+	background: #283885;
+	border: 1px solid #283885;
+	color: rgb(235,235,235);
+	text-decoration: none;
+	font-family: 'Spectral', serif;
+	font-size: 40px;
+	display: block;
+	width: 50%;
+	margin-left: 25%;
+	padding: 20px 0;
+	
+	@include phone {
+		font-size: 20px;
+		width: 80%;
+		margin-left: 10%;
+	}
+}
+
+.button:hover {
+	color: #283885;
+	background: rgb(235,235,235);
+
+}
+
+
+.artists {
+	padding: 30px;
+	overflow: auto;
+	
+	@include phone {
+		padding: 15px;
+	}
+}
+
+.entry {
+	width: calc(33.336% - 21px);
+	float: left;
+	margin-right: 30px;
+	margin-bottom: 50px;
+	
+	@include phone {
+		width: 100%;
+		margin-right: 0;
+	}
+	
+	&:nth-of-type(3n) {
+		margin-right: 0;
+	}
+	
+	&__title, &__copy {
+		color: #f1818a;
+		font-size: 16px;
+	}
+	
+	&__title {
+		font-size: 25px;
+		text-transform: uppercase;
+		margin-bottom: 0.5em;
+		line-height: 1.1;
+	}
+	
+	&__copy {
+		margin-top: 0.5em;
+		text-align: left;
+		
+		p {
+			margin-bottom: 1em;
+		}
+		
+		a {
+			border-bottom: 1px solid #283885;
+			
+			&:hover {
+				border-bottom: 0px;
+			}
+		}
+	}
+	
+	&__wrap {
+		background-color: #f1818a;	
+	}
+	
+	&__image {
+		height: 20vw;
+		background-position: center;
+		background-size: cover;
+		mix-blend-mode: screen;
+		background-repeat: no-repeat;
+		
+		@include phone {
+			height: 50vw;
+		}
+	}
+}
